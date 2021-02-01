@@ -1,0 +1,19 @@
+extend type Query {
+  events(offset: Int, limit: Int, order: String, excludeFirst: Boolean, excludeLast: Boolean): [Event]
+  event(id: Int!): Event
+  eventLast: Event
+}
+
+type Event {
+  body: JSON
+  created: Date
+  end: Date
+  id: Int
+  image: Media
+  owner: User
+  place: JSON
+  published: Boolean
+  start: Date
+  title: JSON
+  updated: Date
+}

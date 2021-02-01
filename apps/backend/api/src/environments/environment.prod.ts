@@ -1,5 +1,9 @@
 export const environment = {
   production: true,
+  jwt: {
+    secret: 'MyJWTSecret',
+    expiresIn: 15000000
+  },
   connection: {
     type: null,
     host: null,

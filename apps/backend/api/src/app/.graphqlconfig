@@ -1,8 +1,14 @@
 {
-  "name": "GraphQL",
+  "name": "backend-api GraphQL Schemas with extend Types",
+  "schemaPath": "./api-root.graphql",
   "projects": {
-    "backend-api": {
-      "includes": ["apps/backend/api/src/app/schema.graphql"]
+    "api": {
+      "includes": [
+        "./auth/*.graphql",
+        "./events/*.graphql",
+        "./media/*.graphql",
+        "./users/*.graphql"
+      ]
     }
   },
   "extensions": {
