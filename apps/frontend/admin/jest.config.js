@@ -1,6 +1,6 @@
 // eslint-disable-next-line no-undef
 module.exports = {
-  displayName: 'frontend-client',
+  displayName: 'frontend-admin',
   preset: '../../../jest.preset.js',
   setupFilesAfterEnv: ['<rootDir>/src/test-setup.ts'],
   globals: {
@@ -15,7 +15,7 @@ module.exports = {
       },
     },
   },
-  coverageDirectory: '../../../coverage/apps/frontend/client',
+  coverageDirectory: '../../../coverage/apps/frontend/admin',
   snapshotSerializers: [
     'jest-preset-angular/build/AngularNoNgAttributesSnapshotSerializer.js',
     'jest-preset-angular/build/AngularSnapshotSerializer.js',
