@@ -15,6 +15,8 @@
     "backend:api:start": "ng serve backend-api",
     "backend:api:build": "ng build backend-api",
     "backend:api:test": "ng test backend-api",
+    "backend:db:start": "cd docker-compose && docker-compose up -d",
+    "backend:db:stop": "cd docker-compose && docker-compose stop",
     "lint": "nx workspace-lint && ng lint",
     "e2e": "ng e2e",
     "affected:apps": "nx affected:apps",
@@ -46,10 +48,13 @@
     "@nestjs/common": "^7.0.0",
     "@nestjs/core": "^7.0.0",
     "@nestjs/platform-express": "^7.0.0",
+    "@nestjs/typeorm": "^7.1.5",
     "@nrwl/angular": "11.2.6",
+    "pg": "^8.5.1",
     "reflect-metadata": "^0.1.13",
     "rxjs": "~6.6.3",
     "tslib": "^2.0.0",
+    "typeorm": "^0.2.30",
     "zone.js": "^0.10.2"
   },
   "devDependencies": {

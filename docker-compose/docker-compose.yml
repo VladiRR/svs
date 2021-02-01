@@ -1,0 +1,15 @@
+version: '3.1'
+
+services:
+  mpostgres:
+    image: postgres:latest
+    restart: 'no'
+    environment:
+      - POSTGRES_DB=svs
+      - POSTGRES_PASSWORD=123456
+    ports:
+      - 5433:5432
+    networks:
+      - backend
+networks:
+  backend:
