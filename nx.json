@@ -25,6 +25,7 @@
     "frontend/admin-e2e": {
       "tags": [],
       "implicitDependencies": ["frontend-admin"]
-    }
+    },
+    "backend-api": { "tags": [] }
   }
 }
