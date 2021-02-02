@@ -28,7 +28,7 @@ export class MediaResolver {
     // 2. Stream file contents into cloud storage:
     // https://nodejs.org/api/stream.html
 
-    // 3. Record the file upload in your DB.
+    // 3. Record the file uploads in your DB.
     // const id = await recordFile( … )
 
     return { filename, mimetype, encoding };
