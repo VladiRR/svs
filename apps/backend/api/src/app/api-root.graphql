@@ -3,6 +3,4 @@ scalar Date
 scalar JSON
 scalar Upload
 
-type Query {
-  test: String
-}
+type Query

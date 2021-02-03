@@ -14,7 +14,7 @@ import { PasswordService } from './services/password.service';
     UsersModule,
     PassportModule.register({ defaultStrategy: 'jwt' }),
     JwtModule.register({
-      secretOrPrivateKey: environment.jwt.secret,
+      privateKey: environment.jwt.secret,
       signOptions: {
         expiresIn: environment.jwt.expiresIn
       }
