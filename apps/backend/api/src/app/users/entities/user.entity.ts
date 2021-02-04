@@ -1,31 +1,38 @@
 import { Column, CreateDateColumn, Entity, OneToMany, PrimaryGeneratedColumn, UpdateDateColumn } from 'typeorm';
 
-import { Media, User } from '@svs/entities';
+import type {IEvent, IMedia, IUser} from '@svs/entities';
 
-import { EventEntity } from '../../events/entities/event.entity';
-import { MediaEntity } from '../../media/entities/media.entity';
+// import { EventEntity } from '../../events/entities/event.entity';
+// import { MediaEntity } from '../../media/entities/media.entity';
 
 @Entity({
   name: 'users'
 })
-export class UserEntity implements User {
+export class UserEntity implements IUser {
   @PrimaryGeneratedColumn()
   id: number;
 
   @Column()
   email: string;
 
-  @OneToMany(
-    type => EventEntity,
-    event => event.owner
-  )
-  events?: Event[];
+  // @OneToMany(
+  //   () => EventEntity,
+  //   event => event.owner
+  // )
+  // events?: Event[];
 
-  @OneToMany(
-    type => MediaEntity,
-    media => media.owner
-  )
-  medias?: Media[];
+  @OneToMany('EventEntity', 'owner')
+  events?: IEvent[];
+
+
+  // @OneToMany(
+  //   () => MediaEntity,
+  //   media => media.owner
+  // )
+  // medias?: IMedia[];
+
+  @OneToMany('MediaEntity', 'owner')
+  medias?: IMedia[];
 
   @Column()
   phone: string;

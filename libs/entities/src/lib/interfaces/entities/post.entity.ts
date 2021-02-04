@@ -1,6 +1,6 @@
-import { Locale } from '../types/locale.type';
-import { Media } from './media.entity';
-import { User } from './user.entity';
+import { ILocale } from '../types/locale.type';
+import { IMedia } from './media.entity';
+import { IUser } from './user.entity';
 
 /**
  * Post interface
@@ -9,7 +9,7 @@ export interface Post {
   /**
    * Post body
    */
-  body: Locale;
+  body: ILocale;
 
   /**
    * Created at
@@ -24,17 +24,17 @@ export interface Post {
   /**
    * Main post image
    */
-  image: Media;
+  image: IMedia;
 
   /**
    * Password
    */
-  media?: Media[];
+  media?: IMedia[];
 
   /**
    * Owner
    */
-  owner: User;
+  owner: IUser;
 
   /**
    * Post published at
@@ -49,7 +49,7 @@ export interface Post {
   /**
    * Post title
    */
-  title: Locale;
+  title: ILocale;
 
   /**
    * Updated at

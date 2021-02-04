@@ -1,37 +1,57 @@
-import { Column, CreateDateColumn, Entity, ManyToOne, OneToMany, PrimaryGeneratedColumn, UpdateDateColumn } from 'typeorm';
+import {
+  Column,
+  CreateDateColumn,
+  Entity,
+  ManyToOne,
+  OneToMany,
+  PrimaryGeneratedColumn,
+  UpdateDateColumn
+} from 'typeorm';
 
-import { Event, Locale, Media, User } from '@svs/entities';
+import type {IEvent, ILocale, IMedia, IUser} from '@svs/entities';
 
-import { EventEntity } from '../../events/entities/event.entity';
-import { UserEntity } from '../../users/entities/user.entity';
+// import {EventEntity} from '../../events/entities/event.entity';
+// import {UserEntity} from '../../users/entities/user.entity';
 
 @Entity({
   name: 'medias'
 })
-export class MediaEntity implements Media {
+export class MediaEntity implements IMedia {
   @CreateDateColumn()
   created: string;
 
-  @Column('simple-json', { nullable: true })
-  description: Locale;
+  @Column('simple-json', {nullable: true})
+  description: ILocale;
 
   @PrimaryGeneratedColumn()
   id: number;
 
-  @OneToMany(
-    type => EventEntity,
-    event => event.image
-  )
-  events?: Event[];
+  // @OneToMany(
+  //   () => EventEntity,
+  //   event => event.image
+  // )
+  // events?: IEvent[];
 
-  @ManyToOne(
-    type => UserEntity,
-    user => user.medias,
+  @OneToMany('EventEntity', 'image')
+  events?: IEvent[];
+
+
+  // @ManyToOne(
+  //   () => UserEntity,
+  //   user => user.medias,
+  //   {
+  //     onDelete: 'CASCADE'
+  //   }
+  // )
+  // owner: IUser;
+
+  @ManyToOne('UserEntity', 'medias',
     {
       onDelete: 'CASCADE'
     }
   )
-  owner: User;
+  owner: IUser;
+
 
   @Column()
   published: boolean;
@@ -39,9 +59,9 @@ export class MediaEntity implements Media {
   @Column()
   src: string;
 
-  @Column('simple-json', { nullable: true })
-  title: Locale;
+  @Column('simple-json', {nullable: true})
+  title: ILocale;
 
-  @UpdateDateColumn({ nullable: true })
+  @UpdateDateColumn({nullable: true})
   updated: string;
 }

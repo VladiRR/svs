@@ -1,4 +1,3 @@
-// eslint-disable-next-line no-undef
 module.exports = {
   displayName: 'backend-api',
   preset: '../../../jest.preset.js',

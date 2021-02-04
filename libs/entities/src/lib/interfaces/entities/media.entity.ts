@@ -1,10 +1,10 @@
-import { Locale } from '../types/locale.type';
-import { User } from './user.entity';
+import { ILocale } from '../types/locale.type';
+import { IUser } from './user.entity';
 
 /**
  * Media interface
  */
-export interface Media {
+export interface IMedia {
   /**
    * Created at
    */
@@ -13,12 +13,12 @@ export interface Media {
   /**
    * Description
    */
-  description?: Locale;
+  description?: ILocale;
 
   /**
    * Owner
    */
-  owner: User;
+  owner: IUser;
 
   /**
    * Post is published
@@ -33,5 +33,5 @@ export interface Media {
   /**
    * Title
    */
-  title?: Locale;
+  title?: ILocale;
 }

@@ -5,8 +5,7 @@
  * @param fields Sub objects fields name
  */
 // TODO разобраться с типом object
-// eslint-disable-next-line @typescript-eslint/ban-types
-export function extendOptions<T = object>(defaultOptions: Partial<T>, options?: Partial<T>, fields: string[] = ['relations']): Partial<T> {
+export function extendOptions<T = Record<string, unknown>>(defaultOptions: Partial<T>, options?: Partial<T>, fields: string[] = ['relations']): Partial<T> {
   const subObjects = {};
   if (!options) {
     options = {};

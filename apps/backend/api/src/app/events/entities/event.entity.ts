@@ -1,16 +1,16 @@
 import { Column, CreateDateColumn, Entity, ManyToOne, PrimaryGeneratedColumn, UpdateDateColumn } from 'typeorm';
 
-import { Event, Locale, Media, User } from '@svs/entities';
+import type { IEvent, ILocale, IMedia, IUser } from '@svs/entities';
 
-import { MediaEntity } from '../../media/entities/media.entity';
-import { UserEntity } from '../../users/entities/user.entity';
+// import { MediaEntity } from '../../media/entities/media.entity';
+// import { UserEntity } from '../../users/entities/user.entity';
 
 @Entity({
   name: 'events'
 })
-export class EventEntity implements Event {
+export class EventEntity implements IEvent {
   @Column('simple-json')
-  body: Locale;
+  body: ILocale;
 
   @CreateDateColumn()
   created: string;
@@ -22,17 +22,19 @@ export class EventEntity implements Event {
   id: number;
 
   @ManyToOne(
-    type => MediaEntity,
-    media => media.events,
+    // () => MediaEntity,
+    // media => media.events,
+    'MediaEntity',
+    'events',
     { nullable: true }
   )
-  image: Media;
+  image: IMedia;
 
-  @ManyToOne(type => UserEntity)
-  owner: User;
+  @ManyToOne('UserEntity', 'events')
+  owner: IUser;
 
   @Column('simple-json', { nullable: true })
-  place: Locale;
+  place: ILocale;
 
   @Column()
   published: boolean;
@@ -41,7 +43,7 @@ export class EventEntity implements Event {
   start: string;
 
   @Column('simple-json')
-  title: Locale;
+  title: ILocale;
 
   @UpdateDateColumn({ nullable: true })
   updated: string;

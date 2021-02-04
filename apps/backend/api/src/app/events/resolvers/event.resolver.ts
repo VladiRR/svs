@@ -1,6 +1,6 @@
 import { Args, Query, Resolver } from '@nestjs/graphql';
 
-import { Event } from '@svs/entities';
+import { IEvent } from '@svs/entities';
 
 import { EventService } from '../services/event.service';
 
@@ -15,7 +15,7 @@ export class EventResolver {
     @Args('order') order?: string,
     @Args('excludeFirst') excludeFirst?: boolean,
     @Args('excludeLast') excludeLast?: boolean
-  ): Promise<Event[]> {
+  ): Promise<IEvent[]> {
     const result = await this.eventService.find({ take: limit, skip: offset, order: order ? JSON.parse(order) : null });
 
     let finishResult = excludeFirst ? result.slice(1, result.length) : result;
@@ -25,12 +25,12 @@ export class EventResolver {
   }
 
   @Query('event')
-  async getEvent(@Args('id') id: number): Promise<Event> {
+  async getEvent(@Args('id') id: number): Promise<IEvent> {
     return this.eventService.findOne(id);
   }
 
   @Query('eventLast')
-  async getEventLAst(): Promise<Event> {
+  async getEventLAst(): Promise<IEvent> {
     const result = await this.eventService.find({ take: 1, skip: 0, order: JSON.parse('{"id":"DESC"}') });
 
     return result && result.length ? result[0] : null;

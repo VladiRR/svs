@@ -1,10 +1,10 @@
-import { Event } from './event.entity';
-import { Media } from './media.entity';
+import { IEvent } from './event.entity';
+import { IMedia } from './media.entity';
 
 /**
  * User interface
  */
-export interface User {
+export interface IUser {
   /**
    * Created at
    */
@@ -48,12 +48,12 @@ export interface UserRelations {
   /**
    * Events
    */
-  events: Event[];
+  events: IEvent[];
 
   /**
    * Medias
    */
-  medias: Media[];
+  medias: IMedia[];
 }
 
 /**

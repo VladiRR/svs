@@ -1,15 +1,15 @@
-import { Locale } from '../types/locale.type';
-import { Media } from './media.entity';
-import { User } from './user.entity';
+import { ILocale } from '../types/locale.type';
+import { IMedia } from './media.entity';
+import { IUser } from './user.entity';
 
 /**
  * Event interface
  */
-export interface Event {
+export interface IEvent {
   /**
    * Event body
    */
-  body: Locale;
+  body: ILocale;
 
   /**
    * Created at
@@ -29,17 +29,17 @@ export interface Event {
   /**
    * Main post image
    */
-  image: Media;
+  image: IMedia;
 
   /**
    * Owner
    */
-  owner: User;
+  owner: IUser;
 
   /**
    * Event is published
    */
-  place?: Locale;
+  place?: ILocale;
 
   /**
    * Event is published
@@ -54,7 +54,7 @@ export interface Event {
   /**
    * Event title
    */
-  title: Locale;
+  title: ILocale;
 
   /**
    * Updated at

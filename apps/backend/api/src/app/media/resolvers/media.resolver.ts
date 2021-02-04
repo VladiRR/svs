@@ -1,6 +1,6 @@
 import { Args, Mutation, Query, Resolver } from '@nestjs/graphql';
 
-import { Media } from '@svs/entities';
+import { IMedia } from '@svs/entities';
 
 import { MediaService } from '../services/media.service';
 
@@ -9,19 +9,21 @@ export class MediaResolver {
   constructor(private readonly mediaService: MediaService) {}
 
   @Query('medias')
-  async getMedias(): Promise<Media[]> {
+  async getMedias(): Promise<IMedia[]> {
     return this.mediaService.find();
   }
 
   @Query('media')
-  async getMedia(@Args('id') id: number): Promise<Media> {
+  async getMedia(@Args('id') id: number): Promise<IMedia> {
     return this.mediaService.findOne(id);
   }
 
   @Mutation('singleUpload')
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   async singleUpload(@Args('file') file: any) {
-    const { stream, filename, mimetype, encoding } = await file;
+    const { filename, mimetype, encoding } = await file;
+
+    // 0. add stream to const {} = await file
 
     // 1. Validate file metadata.
 

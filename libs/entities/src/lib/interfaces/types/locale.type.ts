@@ -1,4 +1,4 @@
-export interface Locale<T = string> {
+export interface ILocale<T = string> {
   [key: string]: T;
 
   /**

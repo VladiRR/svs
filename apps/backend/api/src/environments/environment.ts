@@ -13,7 +13,7 @@ export const environment = {
     database: 'svs',
     dropSchema: false,
     synchronize: true,
-    logging: true,
+    logging: false,
     entities: [
       "dist/apps/backend/api/src/**/*.entity{.ts, .js}"
     ],
