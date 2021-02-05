@@ -1,0 +1,14 @@
+{
+  "type": "postgres",
+  "host": "-HOST-",
+  "port": "-PORT-",
+  "username": "-USER-NAME-",
+  "password": "-PASSWORD-",
+  "database": "-DB-",
+  "synchronize": true,
+  "entities": ["dist/apps/backend/api/src/**/*.entity.js  -WHERE FIND ENTITIES WHEN EXECUTE api:start-"],
+  "migrations": ["dist/apps/backend/api/src/migrations/*.js -WHERE FIND MIGRATIONS WHEN EXECUTE migration:run-"],
+  "cli": {
+    "migrationsDir": "apps/backend/api/src/migrations -WHERE PUT MIGRATIONS WHEN EXECUTE migration:create-"
+  }
+}

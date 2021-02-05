@@ -10,10 +10,10 @@ export const environment = {
     port: 5433,
     username: 'postgres',
     password: '123456',
-    database: 'svs',
+    database: 'SVS',
     dropSchema: false,
     synchronize: true,
-    logging: false,
+    logging: true,
     entities: [
       "dist/apps/backend/api/src/**/*.entity{.ts, .js}"
     ],
