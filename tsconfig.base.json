@@ -18,5 +18,5 @@
       "@svs/entities": ["libs/entities/src/index.ts"]
     }
   },
-  "exclude": ["node_modules", "tmp"]
+  "exclude": ["node_modules", "tmp", "documentation"]
 }
