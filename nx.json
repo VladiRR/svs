@@ -1,9 +1,14 @@
 {
   "npmScope": "svs",
-  "affected": { "defaultBase": "master" },
+  "affected": {
+    "defaultBase": "master"
+  },
   "implicitDependencies": {
     "angular.json": "*",
-    "package.json": { "dependencies": "*", "devDependencies": "*" },
+    "package.json": {
+      "dependencies": "*",
+      "devDependencies": "*"
+    },
     "tsconfig.base.json": "*",
     "tslint.json": "*",
     ".eslintrc.json": "*",
@@ -12,14 +17,27 @@
   "tasksRunnerOptions": {
     "default": {
       "runner": "@nrwl/workspace/tasks-runners/default",
-      "options": { "cacheableOperations": ["build", "lint", "test", "e2e"] }
+      "options": {
+        "cacheableOperations": [
+          "build",
+          "lint",
+          "test",
+          "e2e"
+        ]
+      }
     }
   },
   "projects": {
-    "frontend-client": { "tags": [] },
+    "frontend-client": {
+      "tags": [
+        "scope:frontend-client"
+      ]
+    },
     "frontend/client-e2e": {
       "tags": [],
-      "implicitDependencies": ["frontend-client"]
+      "implicitDependencies": [
+        "frontend-client"
+      ]
     }
   }
 }
