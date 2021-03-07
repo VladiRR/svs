@@ -6,9 +6,8 @@
 
 This project was generated using [Nx](https://nx.dev).
 
-<p align="center"><img src="https://raw.githubusercontent.com/nrwl/nx/master/images/nx-logo.png" width="450"></p>
 
-<p align="center"> <img src="https://raw.githubusercontent.com/VladiRR/svs/master/images/svvs_v02.png" alt="logo svvs"> </p>
+<p align="center"> <img src="https://raw.githubusercontent.com/VladiRR/svs/master/images/svvs_v02.png" width="450" alt="logo svvs"> </p>
 
 ## Quick Start & Documentation
 
